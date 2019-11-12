@@ -95,7 +95,7 @@ tr ':\n' '\n:' |
 sed -E 's,^(-|$),./\1,' |
 sort -u |
 tr '\n:' '\0\n' |
-xargs -0 sh -c 'exec find -L -- "$@" -depth 1 -type f -print0 2>/dev/null' -- |
+xargs -0 sh -c 'exec find 2>/dev/null -L "$@" -maxdepth 1 -type f -print0' -- |
 tr '\0\n' '\n\0' |
 { if test -n "$print_paths"
   then sort
