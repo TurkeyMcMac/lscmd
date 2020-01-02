@@ -37,25 +37,26 @@ given (in the same format as the PATH variable,) each one is searched. The given
 paths are assumed to contain commands.
 
 Options:
-  --help     Print this help information.
-  --version  Print version information.
-  --paths    Print executable paths rather than just names. If multiple commands
-             with the same name exist, they are all printed in this mode.
-  --null     Use NUL character to delimit output rather than the newline.
+  -h, --help     Print this help information.
+  -v, --version  Print version information.
+  --paths        Print executable paths rather than just names. If multiple
+                 commands with the same name exist, they are all printed in this
+                 mode.
+  --null         Use NUL character to delimit output rather than the newline.
 HELP
 }
 
 print_version() {
-	echo "$0 version 1.0.3"
+	echo "$0 version 1.1.0"
 }
 
 while test "$#" -gt 0; do
 	case "$1" in
-	--help)
+	-h|--help)
 		print_help
 		exit 0
 		;;
-	--version)
+	-v|--version)
 		print_version
 		exit 0
 		;;
